@@ -5,6 +5,7 @@
 # https://opentofu.org/docs/cli/commands/test/#the-mock_provider-blocks
 
 mock_provider "google" {}
+mock_provider "random" {}
 
 run "default" {
   command = apply
@@ -20,7 +21,6 @@ variables {
     "mock-client-cert-b"
   ]
 
-  environment     = "mock-environment"
   host_project_id = "mock-host-project"
   instance_name   = "mock-instance"
   project         = "mock-project"
