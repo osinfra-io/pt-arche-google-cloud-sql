@@ -20,7 +20,7 @@ resource "google_sql_database_instance" "this" {
     }
 
     dynamic "database_flags" {
-      for_each = startswith(var.database_version, "POSTGRES_") ? local.postgres_database_flags : []
+      for_each = local.database_flags
       content {
         name  = database_flags.value.name
         value = database_flags.value.value
