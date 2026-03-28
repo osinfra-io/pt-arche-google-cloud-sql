@@ -2,6 +2,8 @@
 # https://opentofu.org/docs/language/values/locals
 
 locals {
+  database_flags = startswith(var.database_version, "POSTGRES_") ? local.postgres_database_flags : []
+
   name    = "${var.instance_name}-${random_id.this.hex}-${var.region}"
   network = "projects/${var.host_project_id}/global/networks/${var.network}"
 
