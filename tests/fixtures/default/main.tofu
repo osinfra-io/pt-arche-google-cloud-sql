@@ -13,10 +13,20 @@ terraform {
   }
 }
 
+# Google Cloud SQL
+# https://github.com/osinfra-io/pt-arche-google-cloud-sql
+
 module "test" {
   source = "../../../regional"
 
-  client_certs = var.client_certs
+  client_certs            = var.client_certs
+  deletion_protection     = false
+  host_project_id         = var.host_project_id
+  instance_name           = var.instance_name
+  labels                  = local.labels
+  network                 = "mock-vpc"
+
+  point_in_time_recovery_enabled = true
 
   postgres_database_flags = [
     {
@@ -25,12 +35,6 @@ module "test" {
     }
   ]
 
-  deletion_protection            = false
-  host_project_id                = var.host_project_id
-  instance_name                  = var.instance_name
-  labels                         = local.labels
-  network                        = "mock-vpc"
-  point_in_time_recovery_enabled = true
-  project                        = var.project
-  region                         = "mock-region"
+  project = var.project
+  region  = "mock-region"
 }
