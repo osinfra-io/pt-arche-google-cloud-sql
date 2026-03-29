@@ -10,8 +10,6 @@ resource "google_sql_database_instance" "this" {
 
   settings {
     availability_type = var.availability_type
-    edition           = "ENTERPRISE"
-    tier              = var.machine_tier
 
     backup_configuration {
       enabled                        = true
@@ -26,6 +24,8 @@ resource "google_sql_database_instance" "this" {
         value = database_flags.value.value
       }
     }
+
+    edition = "ENTERPRISE"
 
     insights_config {
       query_insights_enabled  = var.query_insights_enabled
@@ -47,6 +47,7 @@ resource "google_sql_database_instance" "this" {
       update_track = var.update_track
     }
 
+    tier        = var.machine_tier
     user_labels = var.labels
   }
 }
