@@ -2,39 +2,39 @@
 # https://opentofu.org/docs/language/values/variables
 
 variable "availability_type" {
+  default     = "REGIONAL"
   description = "The availability type of the Cloud SQL instance"
   type        = string
-  default     = "REGIONAL"
 }
 
 variable "backup_start_time" {
+  default     = "04:00"
   description = "Time indicating when backup configuration starts"
   type        = string
-  default     = "04:00"
 }
 
 variable "client_certs" {
+  default     = []
   description = "A set of client cert names, note: 10 max per instance"
   type        = set(string)
-  default     = []
 }
 
 variable "database_version" {
+  default     = "POSTGRES_16"
   description = "The MySQL, PostgreSQL or SQL Server version to use."
   type        = string
-  default     = "POSTGRES_16"
 }
 
 variable "deletion_protection" {
+  default     = true
   description = "Whether or not to allow OpenTofu to destroy the instance"
   type        = bool
-  default     = true
 }
 
 variable "host_project_id" {
+  default     = ""
   description = "Host project ID for the shared VPC"
   type        = string
-  default     = ""
 }
 
 variable "instance_name" {
@@ -43,27 +43,27 @@ variable "instance_name" {
 }
 
 variable "labels" {
+  default     = {}
   description = "A map of key/value pairs to assign to the resources being created"
   type        = map(string)
-  default     = {}
 }
 
 variable "machine_tier" {
+  default     = "db-f1-micro"
   description = "The machine type to use. Postgres supports only shared-core machine types, and custom machine types such as db-custom-2-13312"
   type        = string
-  default     = "db-f1-micro"
 }
 
 variable "mw_day" {
+  default     = 4
   description = "Maintenance window day"
   type        = number
-  default     = 4
 }
 
 variable "mw_hour" {
+  default     = 17
   description = "Maintenance window hour"
   type        = number
-  default     = 17
 }
 
 variable "network" {
@@ -72,18 +72,18 @@ variable "network" {
 }
 
 variable "point_in_time_recovery_enabled" {
+  default     = false
   description = "True if Point-in-time recovery is enabled. Will restart database if enabled after instance creation. Valid only for PostgreSQL instances"
   type        = bool
-  default     = false
 }
 
 variable "postgres_database_flags" {
+  default     = []
   description = "The database flags for Cloud SQL. See [PostgreSQL Flags](https://cloud.google.com/sql/docs/postgres/flags)"
   type = list(object({
     name  = string
     value = string
   }))
-  default = []
 }
 
 variable "project" {
@@ -92,33 +92,33 @@ variable "project" {
 }
 
 variable "query_insights_enabled" {
+  default     = true
   description = "True if Query Insights feature is enabled"
   type        = bool
-  default     = true
 }
 
 variable "query_plans_per_minute" {
+  default     = 5
   description = "Number of query execution plans captured by Insights per minute for all queries combined. Between 0 and 20"
   type        = number
-  default     = 5
 }
 
 variable "query_string_length" {
+  default     = 1024
   description = "Maximum query length stored in bytes. Between 256 and 4500"
   type        = number
-  default     = 1024
 }
 
 variable "record_application_tags" {
+  default     = true
   description = "True if Query Insights will record application tags from query when enabled"
   type        = bool
-  default     = true
 }
 
 variable "record_client_address" {
+  default     = true
   description = "True if Query Insights will record client address when enabled"
   type        = bool
-  default     = true
 }
 
 variable "region" {
@@ -127,7 +127,7 @@ variable "region" {
 }
 
 variable "update_track" {
+  default     = "stable"
   description = "Receive updates earlier"
   type        = string
-  default     = "stable"
 }
