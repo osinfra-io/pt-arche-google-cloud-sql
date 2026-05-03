@@ -1,4 +1,4 @@
-# <img align="left" width="45" height="45" src="https://github.com/osinfra-io/opentofu-google-cloud-sql/assets/1610100/7b264c45-cb29-457b-86c9-40e3b82e44d4"> Google Cloud Platform - Cloud SQL OpenTofu Module
+# Google Cloud Platform - Cloud SQL OpenTofu Module
 
 [![OpenTofu Tests](https://img.shields.io/github/actions/workflow/status/osinfra-io/pt-arche-google-cloud-sql/test.yml?style=for-the-badge&logo=opentofu&color=FEDA15&label=OpenTofu%20Tests)](https://github.com/osinfra-io/pt-arche-google-cloud-sql/actions/workflows/test.yml) [![Dependabot](https://img.shields.io/github/actions/workflow/status/osinfra-io/pt-arche-google-cloud-sql/dependabot.yml?style=for-the-badge&logo=github&color=2088FF&label=Dependabot)](https://github.com/osinfra-io/pt-arche-google-cloud-sql/actions/workflows/dependabot.yml) [![Datadog Security Enabled](https://img.shields.io/badge/Datadog%20Security-Enabled-632CA6?style=for-the-badge&logo=datadog)](https://app.datadoghq.com/security/code-security/repositories?repository_id=pt-arche-google-cloud-sql)
 
