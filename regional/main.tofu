@@ -67,6 +67,8 @@ resource "google_sql_ssl_cert" "this" {
 # https://search.opentofu.org/provider/hashicorp/random/latest/docs/resources/id
 
 resource "random_id" "this" {
+  count = var.random_id_suffix ? 1 : 0
+
   byte_length = "1"
   prefix      = "tf"
 }

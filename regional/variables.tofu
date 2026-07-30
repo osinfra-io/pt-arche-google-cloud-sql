@@ -109,6 +109,12 @@ variable "query_string_length" {
   type        = number
 }
 
+variable "random_id_suffix" {
+  default     = true
+  description = "Whether to append a random ID suffix to the instance name. Set to false for a deterministic name of instance_name-region that consumers can reference without reading state"
+  type        = bool
+}
+
 variable "record_application_tags" {
   default     = true
   description = "True if Query Insights will record application tags from query when enabled"

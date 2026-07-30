@@ -4,7 +4,7 @@
 locals {
   database_flags = startswith(var.database_version, "POSTGRES_") ? local.postgres_database_flags : []
 
-  name    = "${var.instance_name}-${random_id.this.hex}-${var.region}"
+  name    = var.random_id_suffix ? "${var.instance_name}-${random_id.this[0].hex}-${var.region}" : "${var.instance_name}-${var.region}"
   network = "projects/${var.host_project_id}/global/networks/${var.network}"
 
   # These flags are required for CIS GCP v1.3.0 compliance

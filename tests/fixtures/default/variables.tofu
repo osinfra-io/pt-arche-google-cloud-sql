@@ -24,3 +24,10 @@ variable "project" {
 
   type = string
 }
+
+variable "random_id_suffix" {
+  default     = true
+  description = "Whether to append a random ID suffix to the instance name"
+
+  type = bool
+}

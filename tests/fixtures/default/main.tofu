@@ -36,5 +36,8 @@ module "test" {
   ]
 
   project = var.project
-  region  = "mock-region"
+
+  random_id_suffix = var.random_id_suffix
+
+  region = "mock-region"
 }
