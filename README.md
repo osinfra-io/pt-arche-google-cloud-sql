@@ -4,9 +4,15 @@
 
 ## Repository Description
 
-OpenTofu **example** module for a Google Cloud Platform cloud SQL instance.
+Reusable OpenTofu child module for a private-IP Google Cloud SQL instance.
 
 ## 🔩 Usage
+
+### Module interface
+
+Consume `//regional` with `source = "github.com/osinfra-io/pt-arche-google-cloud-sql//regional?ref=<commit_sha>"`. See [`regional/variables.tofu`](regional/variables.tofu) and [`regional/outputs.tofu`](regional/outputs.tofu).
+
+The module defaults to a regional PostgreSQL 16 Enterprise instance on `db-f1-micro`, with automated backups, Query Insights, encrypted-only connections, private IPv4 networking, and deletion protection enabled. Point-in-time recovery is disabled by default. Client certificate private keys and server CA material are sensitive outputs and must be handled as secrets. Cloud SQL, regional high availability, backups, Query Insights, and larger machine tiers incur ongoing GCP costs; disabling deletion protection or changing network/database settings can be disruptive.
 
 > [!TIP]
 > You can check the [tests/fixtures](tests/fixtures) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples on which to base your configurations.
