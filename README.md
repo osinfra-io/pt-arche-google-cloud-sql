@@ -15,7 +15,7 @@ Consume `//regional` with `source = "github.com/osinfra-io/pt-arche-google-cloud
 The module defaults to a regional PostgreSQL 16 Enterprise instance on `db-f1-micro`, with automated backups, Query Insights, encrypted-only connections, private IPv4 networking, and deletion protection enabled. Point-in-time recovery is disabled by default. Client certificate private keys and server CA material are sensitive outputs and must be handled as secrets. Cloud SQL, regional high availability, backups, Query Insights, and larger machine tiers incur ongoing GCP costs; disabling deletion protection or changing network/database settings can be disruptive.
 
 > [!TIP]
-> You can check the [tests/fixtures](tests/fixtures) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples on which to base your configurations.
+> See [tests/fixtures](tests/fixtures) for example configurations.
 
 Google project services must be enabled before using this module. As a best practice, these should be defined in the [pt-arche-google-project](https://github.com/osinfra-io/pt-arche-google-project) module. The following services are required:
 
@@ -29,13 +29,11 @@ Google project services must be enabled before using this module. As a best prac
 
 ## 📋 Skills and Knowledge
 
-Links to documentation and other resources required to develop and iterate in this repository successfully.
-
 - [cloud sql](https://cloud.google.com/sql/docs)
 
 ## 🔍 Tests
 
-All tests are [mocked](https://opentofu.org/docs/cli/commands/test/#the-mock_provider-blocks) allowing us to test the module without creating infrastructure or requiring credentials. The trade-offs are acceptable in favor of speed and simplicity. In an OpenTofu test, a mocked provider or resource will generate fake data for all computed attributes that would normally be provided by the underlying provider APIs.
+Tests use [mocked providers](https://opentofu.org/docs/cli/commands/test/#the-mock_provider-blocks); no infrastructure or credentials are required.
 
 ```none
 tofu init
