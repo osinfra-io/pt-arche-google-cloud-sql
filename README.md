@@ -15,7 +15,7 @@ Consume `//regional` with `source = "github.com/osinfra-io/pt-arche-google-cloud
 The module defaults to a regional PostgreSQL 16 Enterprise instance on `db-f1-micro`, with automated backups, Query Insights, encrypted-only connections, private IPv4 networking, and deletion protection enabled. Point-in-time recovery is disabled by default. Client certificate private keys and server CA material are sensitive outputs and must be handled as secrets. Cloud SQL, regional high availability, backups, Query Insights, and larger machine tiers incur ongoing GCP costs; disabling deletion protection or changing network/database settings can be disruptive.
 
 > [!TIP]
-> See [tests/fixtures](tests/fixtures) for example configurations.
+> You can check the [tests/fixtures](tests/fixtures) directory for example configurations. These fixtures set up the system for testing by providing all the necessary initial code, thus creating good examples on which to base your configurations.
 
 Google project services must be enabled before using this module. As a best practice, these should be defined in the [pt-arche-google-project](https://github.com/osinfra-io/pt-arche-google-project) module. The following services are required:
 
