@@ -4,9 +4,7 @@
 output "client_cert" {
   description = "The client certificate"
   sensitive   = true
-  value = {
-    for cert in var.client_certs : cert => google_sql_ssl_cert.this[cert].cert
-  }
+  value       = local.client_cert
 }
 
 output "instance" {
@@ -28,7 +26,5 @@ output "private_ip_address" {
 output "private_key" {
   description = "The client private key"
   sensitive   = true
-  value = {
-    for key in var.client_certs : key => google_sql_ssl_cert.this[key].private_key
-  }
+  value       = local.client_private_key
 }

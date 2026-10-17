@@ -2,6 +2,14 @@
 # https://opentofu.org/docs/language/values/locals
 
 locals {
+  client_cert = {
+    for cert in var.client_certs : cert => google_sql_ssl_cert.this[cert].cert
+  }
+
+  client_private_key = {
+    for key in var.client_certs : key => google_sql_ssl_cert.this[key].private_key
+  }
+
   database_flags = startswith(var.database_version, "POSTGRES_") ? local.postgres_database_flags : []
 
   name    = "${var.instance_name}-${random_id.this.hex}-${var.region}"
